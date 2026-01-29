@@ -1,0 +1,169 @@
+2026-01-29 11:20:47,122 INFO [rag_logger] Analysis requested for Alarm: ALARM-001
+2026-01-29 11:20:47,342 DEBUG [rag_logger] Retrieved 3 documents.
+2026-01-29 11:20:47,342 DEBUG [rag_logger] Doc 1: /home/ksoe/llm_project/my_rag_app1/data/manuals/PT900 Autopilot System User’s Manual .pdf - ▲ ▲
+Alert indication (ALARM/ WARNING/CAUTION)
+ANNUNCIATOR
+NO.2 NO.1
+PWR PWR 10 HDG DEV 10
+ON ON
+<- 7...
+2026-01-29 11:20:47,342 DEBUG [rag_logger] Doc 2: /home/ksoe/llm_project/my_rag_app1/data/manuals/PT900 Autopilot System User’s Manual .pdf - Alert indication (ALARM/ WARNING/CAUTION)
+ANNUNCIATOR
+NO.2 NO.1
+PWR PWR 10 HDG DEV 10
+ON ON
+<- 7.3ﾟ
+...
+2026-01-29 11:20:47,342 DEBUG [rag_logger] Doc 3: /home/ksoe/llm_project/my_rag_app1/data/manuals/test_manual.pdf - Alarm Code: ALARM-001
+Cause: High Pressure
+Action: Check Valve....
+2026-01-29 11:20:47,342 DEBUG [rag_logger] Final Prompt Sent to LLM:
+
+        당신은 선박 엔지니어링 전문가입니다. 주어진 Context를 바탕으로 알람 원인을 분석하고 해결책을 제시하세요.
+        Context에 없는 내용은 지어내지 말고 "정보가 부족합니다"라고 말하세요.
+        
+        Context:
+        ▲ ▲
+Alert indication (ALARM/ WARNING/CAUTION)
+ANNUNCIATOR
+NO.2 NO.1
+PWR PWR 10 HDG DEV 10
+ON ON
+<- 7.3ﾟ
+PWR PWR Heading Alter FAIL FAIL 280.7ﾟ
+ACT ACT
+RUN RUN
+ACT ACT
+FAIL FAIL
+Rudder
+35 35
+Order -> 10.0ﾟFeedback <- 7.9ﾟ
+POWER SYSTEM
+AAlleerrtt::
+W
+AA
+A
+LL
+R
+RR
+N
+MM
+-
+::
+B
+00
+[NSo
+WW
+C
+AA
+Sa
+RR
+]l
+NN
+e
+::
+Ar Nt N
+10
+UN
+CC
+C
+AA
+I
+UU
+A
+TT
+T
+::
+O R
+00
+1
+((IINNDD:: 00))
+3062 COMM timeout
+BATT ALARM AUTO (1808)Device unavailable.
+BACK WARNING MAN
+UP
+CAUTION
+ALARM
+ACK
+BRILL BRILL AL A A C R K M HOME
+
+Alert indication (ALARM/ WARNING/CAUTION)
+ANNUNCIATOR
+NO.2 NO.1
+PWR PWR 10 HDG DEV 10
+ON ON
+<- 7.3ﾟ
+PWR PWR Heading Alter
+FAIL FAIL 280.7ﾟ
+ACT ACT
+RUN RUN
+ACT ACT
+FAIL FAIL
+Rudder
+35 35
+Order -> 10.0ﾟFeedback <- 7.9ﾟ
+POWER SYSTEM
+AAlleerrtt::
+W
+AA
+A
+LL
+R
+RR
+N
+MM
+-
+::
+B
+00
+[NSo
+WW
+C
+AA
+Sa
+RR
+]l
+NN
+e
+::
+Ar Nt N
+10
+UN
+CC
+C
+AA
+I
+UU
+A
+TT
+T
+::
+O R
+00
+1
+((IINNDD:: 00))
+3062 COMM timeout
+BATT ALARM AUTO (1808)Device unavailable.
+BACK WARNING MAN
+UP
+CAUTION
+ALARM
+ACK
+BRILL BRILL AL A A C R K M HOME
+
+Alarm Code: ALARM-001
+Cause: High Pressure
+Action: Check Valve.
+        
+        Current Sensor Data:
+        {'temperature': 80.0, 'pressure': 200.0}
+        
+        Alarm Code:
+        ALARM-001
+        
+        User Question:
+        원인과 해결 방법을 요약해줘.
+        
+        Answer (Korean):
+        
+2026-01-29 11:20:47,346 ERROR [rag_logger] Error during RAG execution: model 'llama3.1' not found (status code: 404)
