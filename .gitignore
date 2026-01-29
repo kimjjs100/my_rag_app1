@@ -8,6 +8,7 @@ __pycache__/
 venv/
 .DS_Store
 chroma.sqlite3
+vector_store/
 
 # v2 Data & Config
 DB_Route_v2/

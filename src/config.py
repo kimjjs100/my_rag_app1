@@ -16,8 +16,8 @@ MODELS_DIR.mkdir(parents=True, exist_ok=True)
 VECTOR_STORE_DIR.mkdir(parents=True, exist_ok=True)
 
 # Model Configs
-# Using a smaller model for faster verification
-EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2" # BAAI/bge-m3"
+# Using multilingual MiniLM for efficient memory usage on 8GB VRAM
+EMBEDDING_MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 LLM_MODEL_NAME = "llama3.1"
 OLLAMA_BASE_URL = "http://localhost:11434"
 

@@ -514,3 +514,79 @@ Action: Check Valve.
 
 주의: 정보가 부족합니다. 시스템의 압력 제어 장치와 Valve의 상세한 정보가 필요합니다.
 2026-01-29 12:50:13,587 INFO [rag_logger] Analysis completed in 13.29 seconds.
+2026-01-29 15:21:33,245 INFO [rag_logger] Analysis requested for Alarm: ALARM-001
+2026-01-29 15:21:33,443 DEBUG [rag_logger] Retrieved 3 documents.
+2026-01-29 15:21:33,443 DEBUG [rag_logger] Doc 1: /home/ksoe/llm_project/my_rag_app1/data/manuals/test_manual.pdf - Alarm Code: ALARM-001
+Cause: High Pressure
+Action: Check Valve....
+2026-01-29 15:21:33,443 DEBUG [rag_logger] Doc 2: /home/ksoe/llm_project/my_rag_app1/data/manuals/PT900 Autopilot System User’s Manual .pdf - 5-2
+l
+5.2 Alert
+The alert (or important indication) appears when PT900 detects some problem like CPU...
+2026-01-29 15:21:33,443 DEBUG [rag_logger] Doc 3: /home/ksoe/llm_project/my_rag_app1/data/manuals/PT900 Autopilot System User’s Manual .pdf - GYRO1
+288.0ﾟ STW 12.5kn
+Operation Rudder Limit
+Economy 20ﾟ
+Loading Full
+Full Screen
+MENU
+● Alert
+Pri...
+2026-01-29 15:21:33,444 DEBUG [rag_logger] Final Prompt Sent to LLM:
+
+        당신은 선박 엔지니어링 전문가입니다. 주어진 Context를 바탕으로 알람 원인을 분석하고 해결책을 제시하세요.
+        Context에 없는 내용은 지어내지 말고 "정보가 부족합니다"라고 말하세요.
+        
+        Context:
+        Alarm Code: ALARM-001
+Cause: High Pressure
+Action: Check Valve.
+
+5-2
+l
+5.2 Alert
+The alert (or important indication) appears when PT900 detects some problem like CPU fail
+or communication fail and so on. This chapter shows how to check the alert contents and
+how to acknowledge them.
+Figure shows the flow of alert handling.
+(There is no buzzer sound and necessary of acknowledgement for caution alert and
+important indication.)
+Alert factor
+Alert appears.
+Buzzer sounds.
+（Alarm or Warning)
+Indication Blinks. Alert is registered in Alert log screen.
+No
+
+GYRO1
+288.0ﾟ STW 12.5kn
+Operation Rudder Limit
+Economy 20ﾟ
+Loading Full
+Full Screen
+MENU
+● Alert
+Priorities Definition (IMO resolution A.1021(26))
+An alarm is a high priority of an alert.
+Alarm Condition requiring immediate attention and action, to maintain the safe navigation and
+operation of the ship.
+Condition requiring no immediate attention or action.
+Warnings are presented for precautionary reasons to bring awareness of changed
+Warning
+        
+        Current Sensor Data:
+        {'temperature': 80.0, 'pressure': 200.0}
+        
+        Alarm Code:
+        ALARM-001
+        
+        User Question:
+        원인과 해결 방법을 요약해줘.
+        
+        Answer (Korean):
+        
+2026-01-29 15:21:37,316 INFO [rag_logger] LLM Response received.
+2026-01-29 15:21:37,316 DEBUG [rag_logger] Response: ALARM-001 코드가 발생한 이유는 고압(High Pressure) 때문입니다.
+
+해결 방법은 밸브를 확인하는 것입니다.
+2026-01-29 15:21:37,316 INFO [rag_logger] Analysis completed in 4.07 seconds.
