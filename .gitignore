@@ -1,3 +1,24 @@
+chroma_db/
+Db_Route/
+output/
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.DS_Store
+chroma.sqlite3
+
+# v2 Data & Config
+DB_Route_v2/
+chroma_db_v2/
+config.json
+
+# Test field
+testArea/
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
